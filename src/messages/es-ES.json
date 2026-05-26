@@ -1,0 +1,25 @@
+{
+  "nav": {
+    "backToShop": "Volver a la tienda"
+  },
+  "product": {
+    "aboutThisItem": "Sobre este articulo",
+    "details": {
+      "category": "Categoria",
+      "rarity": "Rareza",
+      "game": "Juego",
+      "delivery": "Entrega",
+      "condition": "Condicion"
+    },
+    "stock": {
+      "inStock": "En stock",
+      "outOfStock": "Sin stock"
+    },
+    "quantity": {
+      "label": "Cantidad"
+    }
+  },
+  "seo": {
+    "siteName": "BloxCart"
+  }
+}

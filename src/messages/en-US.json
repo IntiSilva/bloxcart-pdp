@@ -1,0 +1,25 @@
+{
+  "nav": {
+    "backToShop": "Back to shop"
+  },
+  "product": {
+    "aboutThisItem": "About this item",
+    "details": {
+      "category": "Category",
+      "rarity": "Rarity",
+      "game": "Game",
+      "delivery": "Delivery",
+      "condition": "Condition"
+    },
+    "stock": {
+      "inStock": "In stock",
+      "outOfStock": "Out of stock"
+    },
+    "quantity": {
+      "label": "Quantity"
+    }
+  },
+  "seo": {
+    "siteName": "BloxCart"
+  }
+}
