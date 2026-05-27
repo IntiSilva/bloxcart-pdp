@@ -2,8 +2,26 @@
   "nav": {
     "backToShop": "Back to shop"
   },
+  "site": {
+    "brand": "bloxcart",
+    "orderStatus": "Order Status",
+    "support247": "24/7 Support",
+    "currency": "USD",
+    "signIn": "Sign in",
+    "menu": "Open menu"
+  },
   "product": {
     "aboutThisItem": "About this item",
+    "sections": {
+      "trust": "Trust highlights",
+      "details": "Product details",
+      "tags": "Tags",
+      "imageGallery": "Product image gallery"
+    },
+    "gallery": {
+      "secret": "Secret",
+      "thumbnails": "Product thumbnail"
+    },
     "details": {
       "category": "Category",
       "rarity": "Rarity",
@@ -18,6 +36,21 @@
     "quantity": {
       "label": "Quantity"
     }
+  },
+  "footer": {
+    "marketplaceNote": "BloxCart is an independent marketplace for digital game items and services. Product delivery and support timelines may vary by game platform policy.",
+    "support": "Support",
+    "resources": "Resources",
+    "legal": "Legal",
+    "blogs": "Blogs",
+    "affiliates": "Affiliates",
+    "claimOrder": "Claim order",
+    "tutorial": "Tutorial",
+    "terms": "Terms",
+    "needHelp": "Need help?",
+    "helpDescription": "Our support team is here around the clock to help with your purchase and delivery questions.",
+    "chatCta": "Let's chat",
+    "copyright": "BloxCart marketplace UI foundation for the PDP take-home assignment."
   },
   "seo": {
     "siteName": "BloxCart"

@@ -1,4 +1,8 @@
-import { type Locale, buildLocalizedProductUrl } from "@/lib/i18n/config";
+import {
+  SUPPORTED_LOCALES,
+  type Locale,
+  buildLocalizedProductUrl,
+} from "@/lib/i18n/config";
 import { getProduct } from "@/lib/product/product-data";
 
 export const LOCALIZED_PRODUCT_SLUGS: Readonly<Record<Locale, string>> = {
@@ -54,7 +58,7 @@ export function buildLocalizedProductPath(locale: Locale): string {
 export function getAllLocalizedProductPaths(): LocalizedProductRoute[] {
   const product = getProduct();
 
-  return (Object.keys(LOCALIZED_PRODUCT_SLUGS) as Locale[]).map((locale) => {
+  return SUPPORTED_LOCALES.map((locale) => {
     const productSlug = getLocalizedProductSlug(locale);
     const gameSlug = product.game.slug;
 

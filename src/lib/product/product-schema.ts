@@ -1,6 +1,7 @@
 import type { Locale } from "@/lib/i18n/config";
 import type { LocalizedProductData } from "@/lib/product/product-data";
-import { getProductCanonicalUrl } from "@/lib/product/product-seo";
+import { mapImagesToSocialAsset } from "@/lib/product/product-images";
+import { getProductCanonicalUrl, toAbsoluteUrl } from "@/lib/product/product-seo";
 
 type ProductAvailability =
   | "https://schema.org/InStock"
@@ -54,6 +55,10 @@ export function parseFormattedPriceToNumber(price: string): number | null {
 }
 
 function getPriceCurrency(locale: Locale, price: string): "USD" | "EUR" {
+  if (price.includes("\u20AC")) {
+    return "EUR";
+  }
+
   if (price.includes("$")) {
     return "USD";
   }
@@ -71,13 +76,14 @@ export function buildProductJsonLd(
 ): ProductJsonLd {
   const parsedPrice = parseFormattedPriceToNumber(product.priceCurrent);
   const price = (parsedPrice ?? 21.5).toFixed(2);
+  const socialImages = mapImagesToSocialAsset(product.images);
 
   return {
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.title,
     description: product.description,
-    image: product.images.map((image) => image.url),
+    image: socialImages.map((image) => toAbsoluteUrl(image.url)),
     brand: {
       "@type": "Brand",
       name: product.game.name,
@@ -92,10 +98,11 @@ export function buildProductJsonLd(
         : "https://schema.org/OutOfStock",
       url: getProductCanonicalUrl(locale),
     },
+    // Assignment placeholder until real reviews/ratings data is integrated.
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: 4.8,
-      reviewCount: 128,
+      ratingValue: 4.5,
+      reviewCount: 1,
     },
   };
 }

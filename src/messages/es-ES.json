@@ -2,8 +2,26 @@
   "nav": {
     "backToShop": "Volver a la tienda"
   },
+  "site": {
+    "brand": "bloxcart",
+    "orderStatus": "Estado del pedido",
+    "support247": "Soporte 24/7",
+    "currency": "USD",
+    "signIn": "Iniciar sesion",
+    "menu": "Abrir menu"
+  },
   "product": {
     "aboutThisItem": "Sobre este articulo",
+    "sections": {
+      "trust": "Ventajas de compra",
+      "details": "Detalles del producto",
+      "tags": "Etiquetas",
+      "imageGallery": "Galeria de imagenes del producto"
+    },
+    "gallery": {
+      "secret": "Secreto",
+      "thumbnails": "Miniatura del producto"
+    },
     "details": {
       "category": "Categoria",
       "rarity": "Rareza",
@@ -18,6 +36,21 @@
     "quantity": {
       "label": "Cantidad"
     }
+  },
+  "footer": {
+    "marketplaceNote": "BloxCart es un marketplace independiente para articulos y servicios digitales de videojuegos. Los tiempos de entrega y soporte pueden variar segun la plataforma.",
+    "support": "Soporte",
+    "resources": "Recursos",
+    "legal": "Legal",
+    "blogs": "Blogs",
+    "affiliates": "Afiliados",
+    "claimOrder": "Reclamar pedido",
+    "tutorial": "Tutorial",
+    "terms": "Terminos",
+    "needHelp": "Necesitas ayuda?",
+    "helpDescription": "Nuestro equipo de soporte esta disponible todo el dia para ayudarte con compras y entregas.",
+    "chatCta": "Hablemos",
+    "copyright": "Base visual de BloxCart para la tarea tecnica de PDP."
   },
   "seo": {
     "siteName": "BloxCart"

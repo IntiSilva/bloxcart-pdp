@@ -1,5 +1,6 @@
 import type { Locale } from "@/lib/i18n/config";
 import type { LocalizedProductData } from "@/lib/product/product-data";
+import { mapImagesToSocialAsset } from "@/lib/product/product-images";
 import { buildLocalizedProductPath } from "@/lib/product/product-routing";
 import type { Metadata } from "next";
 
@@ -42,7 +43,19 @@ export function buildProductMetadata({
   siteName,
 }: ProductMetadataParams): Metadata {
   const canonicalUrl = getProductCanonicalUrl(locale);
-  const firstImage = product.images[0];
+  const firstImage = mapImagesToSocialAsset(product.images)[0];
+  const firstImageAbsoluteUrl = firstImage
+    ? toAbsoluteUrl(firstImage.url)
+    : undefined;
+  const openGraphImages =
+    firstImage && firstImageAbsoluteUrl
+      ? [
+          {
+            url: firstImageAbsoluteUrl,
+            alt: firstImage.alt,
+          },
+        ]
+      : undefined;
 
   return {
     title: product.title,
@@ -57,15 +70,16 @@ export function buildProductMetadata({
       url: canonicalUrl,
       siteName,
       type: "website",
-      images: firstImage
-        ? [
-            {
-              url: firstImage.url,
-              alt: firstImage.alt,
-            },
-          ]
-        : undefined,
+      images: openGraphImages,
     },
+    twitter: firstImageAbsoluteUrl
+      ? {
+          card: "summary_large_image",
+          title: product.title,
+          description: product.description,
+          images: [firstImageAbsoluteUrl],
+        }
+      : undefined,
     other: {
       "og:type": "product",
     },
