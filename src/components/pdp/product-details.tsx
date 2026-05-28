@@ -22,7 +22,7 @@ export function ProductDetails({ product, labels }: ProductDetailsProps) {
 
   return (
     <section aria-label={labels.product.sections.details}>
-      <Card className="rounded-2xl border border-border/70 bg-card/70 px-0 py-0">
+      <Card className="rounded-xl border border-border/70 bg-card/70 px-0 py-0">
         <h2 className="border-b border-border/70 px-4 py-3 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
           {labels.product.sections.details}
         </h2>

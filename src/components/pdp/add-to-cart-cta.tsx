@@ -22,7 +22,7 @@ export function AddToCartCta({ label, disabled = false }: AddToCartCtaProps) {
       <Button
         type="button"
         size="lg"
-        className="h-11 w-full rounded-xl text-base font-semibold shadow-[0_0_0_0_rgba(191,63,255,0)] transition-shadow hover:shadow-[0_0_22px_-8px_rgba(191,63,255,0.85)]"
+        className="h-11 w-full rounded-lg text-base font-semibold shadow-[0_0_0_0_rgba(191,63,255,0)] transition-shadow hover:shadow-[0_0_22px_-8px_rgba(191,63,255,0.85)]"
         disabled={disabled}
         aria-disabled={disabled}
       >

@@ -25,7 +25,7 @@ export function QuantitySelector({
 
   return (
     <div
-      className="inline-flex h-11 items-center rounded-xl border border-border/80 bg-card/70 p-1"
+      className="inline-flex h-11 items-center rounded-lg border border-border/80 bg-card/70 p-1"
       role="group"
       aria-label={label}
     >
