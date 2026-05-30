@@ -103,7 +103,7 @@ function GameIcon({
       alt=""
       width={26}
       height={26}
-      className={cn("size-6.5 rounded-md object-cover", iconClassName)}
+      className={cn("size-6 rounded-md object-cover 2xl:size-6.5", iconClassName)}
       aria-hidden="true"
     />
   );
@@ -124,7 +124,7 @@ export function GameSelector({ className }: GameSelectorProps) {
           variant="outline"
           size="lg"
           className={cn(
-            "h-11.5 w-55 shrink-0 justify-between rounded-lg border-blox-border bg-blox-control px-2 text-left text-sm hover:bg-blox-control-hover md:w-45",
+            "h-10 w-55 shrink-0 justify-between rounded-lg border-blox-border bg-blox-control px-2 text-left text-sm hover:bg-blox-control-hover md:w-45 2xl:h-11 2xl:w-52",
             className
           )}
           aria-label={`Game selector, selected ${selectedGame.name}`}
@@ -134,10 +134,10 @@ export function GameSelector({ className }: GameSelectorProps) {
             <span className="truncate text-sm font-medium">{selectedGame.name}</span>
           </span>
           <span
-            className="grid size-6.5 shrink-0 place-items-center rounded-md bg-blox-control-accent/10 text-muted-foreground"
+            className="grid size-6 shrink-0 place-items-center rounded-md bg-blox-control-accent/10 text-muted-foreground 2xl:size-6.5"
             aria-hidden="true"
           >
-            <ChevronDown className="size-3.5" />
+            <ChevronDown className="size-3.5 2xl:size-4" />
           </span>
         </Button>
       </DropdownMenuTrigger>

@@ -9,7 +9,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
-  --font-heading: var(--font-sans);
+  --font-heading: var(--font-heading);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -43,6 +43,7 @@
   --color-blox-header: var(--blox-header);
   --color-blox-surface: var(--blox-surface);
   --color-blox-surface-soft: var(--blox-surface-soft);
+  --color-blox-footer: var(--blox-footer);
   --color-blox-border: var(--blox-border);
   --color-blox-primary: var(--blox-primary);
   --color-blox-primary-hover: var(--blox-primary-hover);
@@ -51,9 +52,17 @@
   --color-blox-control-accent: var(--blox-control-accent);
   --color-blox-sale: var(--blox-sale);
   --color-blox-rarity: var(--blox-rarity);
+  --color-blox-rarity-mythical: var(--blox-rarity-mythical);
   --color-blox-warning: var(--blox-warning);
   --color-blox-info: var(--blox-info);
+  --color-blox-footer-text: var(--blox-footer-text);
   --color-blox-gallery-orange: var(--blox-gallery-orange);
+  --container-pdp-rail: 77.5rem;
+  --container-pdp-rail-wide: 90rem;
+  --container-pdp-hero: 46.625rem;
+  --container-pdp-hero-wide: 70rem;
+  --text-pdp-title: 2rem;
+  --text-pdp-price: 2.75rem;
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -103,6 +112,7 @@
   --blox-header: #2a263d;
   --blox-surface: #231f33;
   --blox-surface-soft: #2a263d;
+  --blox-footer: #2a263d;
   --blox-border: #332f48;
   --blox-primary: #c439f0;
   --blox-primary-hover: #cf4df2;
@@ -111,8 +121,10 @@
   --blox-control-accent: #837bab;
   --blox-sale: #eb3e5e;
   --blox-rarity: #309ce3;
+  --blox-rarity-mythical: #e66aac;
   --blox-warning: #f09d39;
   --blox-info: #1fa8c3;
+  --blox-footer-text: #aca7bc;
   --blox-gallery-orange: #e3532f;
   --blox-thumb-dim: 0.52;
 }
@@ -155,6 +167,7 @@
   --blox-header: #2a263d;
   --blox-surface: #231f33;
   --blox-surface-soft: #2a263d;
+  --blox-footer: #2a263d;
   --blox-border: #332f48;
   --blox-primary: #c439f0;
   --blox-primary-hover: #cf4df2;
@@ -163,8 +176,10 @@
   --blox-control-accent: #837bab;
   --blox-sale: #eb3e5e;
   --blox-rarity: #309ce3;
+  --blox-rarity-mythical: #e66aac;
   --blox-warning: #f09d39;
   --blox-info: #1fa8c3;
+  --blox-footer-text: #aca7bc;
   --blox-gallery-orange: #e3532f;
   --blox-thumb-dim: 0.52;
 }

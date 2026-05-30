@@ -38,7 +38,7 @@
     }
   },
   "footer": {
-    "marketplaceNote": "BloxCart is an independent marketplace for digital game items and services. Product delivery and support timelines may vary by game platform policy.",
+    "marketplaceNote": "BloxCart operates independently and is not affiliated, associated, or endorsed by Uplift Games LLC or Roblox Corporation. We are not authorized, endorsed, or sponsored by Uplift Games LLC and Roblox Corporation. We are an independent marketplace site. All 'Adopt Me' trademarks remain the property of the Uplift Games LLC.",
     "support": "Support",
     "resources": "Resources",
     "legal": "Legal",
@@ -48,9 +48,9 @@
     "tutorial": "Tutorial",
     "terms": "Terms",
     "needHelp": "Need help?",
-    "helpDescription": "Our support team is here around the clock to help with your purchase and delivery questions.",
+    "helpDescription": "We're here to help! Our expert support team is at your service 24/7.",
     "chatCta": "Let's chat",
-    "copyright": "BloxCart marketplace UI foundation for the PDP take-home assignment."
+    "copyright": "BloxCart is owned and operated by HappyCrown Limited, company number 15022196, registered at Talians Barn Hill House, Stembridge, Martock, England, TA12 6BL. Payments and related services may be handled via external entities."
   },
   "seo": {
     "siteName": "BloxCart"

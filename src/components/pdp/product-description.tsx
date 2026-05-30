@@ -20,11 +20,11 @@ export function ProductDescription({
   const paragraphs = splitDescriptionIntoParagraphs(product.description);
 
   return (
-    <section aria-labelledby="product-description-title" className="space-y-3">
+    <section aria-labelledby="product-description-title" className="space-y-3 2xl:space-y-4">
       <h2 id="product-description-title" className="text-3xl font-semibold text-foreground">
         {labels.product.aboutThisItem}
       </h2>
-      <div className="space-y-4 text-base leading-7 text-muted-foreground">
+      <div className="space-y-4 text-sm text-white/50 2xl:space-y-5 2xl:text-base 2xl:leading-7">
         {paragraphs.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}

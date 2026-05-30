@@ -47,10 +47,10 @@ export function LocaleCurrencySwitcher({
           type="button"
           variant="outline"
           size="lg"
-          className="h-11.5 shrink-0 justify-center gap-2 rounded-lg border-blox-border bg-blox-control px-2.5 text-sm font-medium text-zinc-100 hover:bg-blox-control-hover"
+          className="h-10 shrink-0 justify-center gap-2 rounded-lg border-blox-border bg-blox-control px-3 text-sm font-medium text-zinc-100 hover:bg-blox-control-hover 2xl:h-11 2xl:px-3"
           aria-label={ariaLabel}
         >
-          <span className="relative block size-6 overflow-hidden rounded-sm">
+          <span className="relative block size-6 overflow-hidden rounded-md">
             <Image
               src={selectedOption.flagSrc}
               alt=""
@@ -81,7 +81,7 @@ export function LocaleCurrencySwitcher({
               option.locale === currentLocale && "bg-primary/14"
             )}
           >
-            <span className="relative block size-6 shrink-0 overflow-hidden rounded-sm">
+            <span className="relative block size-6 shrink-0 overflow-hidden rounded-md">
               <Image
                 src={option.flagSrc}
                 alt=""
