@@ -2,6 +2,14 @@ import { GameSelector } from "@/components/pdp/game-selector";
 import { LocaleCurrencySwitcher } from "@/components/pdp/locale-currency-switcher";
 import type { ProductPageLabels } from "@/components/pdp/types";
 import { Button } from "@/components/ui/button";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 import type { Locale } from "@/lib/i18n/config";
 import { buildLocalizedProductPath } from "@/lib/product/product-routing";
 import { cn } from "@/lib/utils";
@@ -60,7 +68,7 @@ function HeaderLogo({ locale, ariaLabel }: HeaderLogoProps) {
         aria-hidden="true"
         width={210}
         height={200}
-        className="h-8.5 w-auto md:hidden"
+        className="h-8 w-auto md:hidden"
       />
       <Image
         src="/logo-desktop.webp"
@@ -131,18 +139,121 @@ function SignInButton({ label, ariaLabel }: SignInButtonProps) {
 
 type MobileMenuButtonProps = {
   ariaLabel: string;
+  locale: Locale;
+  labels: ProductPageLabels["nav"];
+  localeOptions: {
+    locale: Locale;
+    label: string;
+    currency: "USD" | "EUR";
+    flagSrc: string;
+    href: string;
+  }[];
 };
 
-function MobileMenuButton({ ariaLabel }: MobileMenuButtonProps) {
+function MobileMenuButton({
+  ariaLabel,
+  locale,
+  labels,
+  localeOptions,
+}: MobileMenuButtonProps) {
+  const isSpanish = locale === "es-ES";
+
   return (
-    <Button
-      type="button"
-      variant="outline"
-      className="size-11.5 p-0 rounded-xl border-blox-border bg-transparent md:hidden"
-      aria-label={ariaLabel}
-    >
-      <Menu className="size-7" aria-hidden="true" />
-    </Button>
+    <Drawer>
+      <DrawerTrigger
+        type="button"
+        className="inline-flex size-10 items-center justify-center rounded-xl border border-blox-border bg-transparent p-0 text-foreground transition-colors hover:bg-blox-control-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 md:hidden"
+        aria-label={ariaLabel}
+      >
+        <Menu className="size-6" aria-hidden="true" />
+      </DrawerTrigger>
+      <DrawerContent className="overflow-hidden border-blox-border bg-blox-surface p-0 text-foreground md:hidden data-[vaul-drawer-direction=bottom]:max-h-[82dvh] [&>div:first-child]:mt-3 [&>div:first-child]:h-1.5 [&>div:first-child]:w-24 [&>div:first-child]:rounded-full [&>div:first-child]:bg-white/25">
+        <DrawerHeader className="border-b border-blox-border px-4 py-3">
+          <div className="space-y-0.5 text-left">
+            <DrawerTitle className="text-sm font-semibold tracking-wide text-white/95">
+              BloxCart Menu
+            </DrawerTitle>
+            <DrawerDescription className="text-xs text-blox-footer-text">
+              {isSpanish
+                ? "Accesos r\u00e1pidos para la navegaci\u00f3n m\u00f3vil."
+                : "Quick access for mobile navigation."}
+            </DrawerDescription>
+          </div>
+        </DrawerHeader>
+
+        <div className="blox-scrollbar max-h-[calc(82dvh-4.5rem)] overflow-y-auto px-4 py-4">
+          <div className="space-y-4">
+            <section className="rounded-2xl border border-blox-border bg-blox-surface-soft/40 p-3">
+              <p className="mb-2 text-[11px] font-medium tracking-wide text-blox-footer-text/80 uppercase">
+                {isSpanish ? "Contexto" : "Context"}
+              </p>
+              <div className="space-y-2.5">
+                <GameSelector className="w-full mx-0" />
+                <div className="flex items-center justify-between gap-2 rounded-xl border border-blox-border/70 bg-blox-control/35 p-2">
+                  <span className="pl-1 text-[11px] font-medium tracking-wide text-blox-footer-text/80 uppercase">
+                    {isSpanish ? "Moneda e idioma" : "Currency & locale"}
+                  </span>
+                  <LocaleCurrencySwitcher
+                    currentLocale={locale}
+                    options={localeOptions}
+                    ariaLabel={isSpanish ? "Moneda e idioma" : "Currency and locale"}
+                  />
+                </div>
+              </div>
+            </section>
+
+            <section className="space-y-2.5">
+              <p className="text-[11px] font-medium tracking-wide text-blox-footer-text/80 uppercase">
+                {isSpanish ? "Accesos r\u00e1pidos" : "Quick actions"}
+              </p>
+              <div className="grid grid-cols-2 gap-2.5">
+                <div
+                  className="rounded-xl border border-blox-border bg-blox-control/45 p-3"
+                  aria-disabled="true"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <span className="grid size-8 place-items-center rounded-lg bg-blox-warning/85">
+                      <Clock3 className="size-4 text-white" aria-hidden="true" />
+                    </span>
+                    <span className="text-sm font-medium leading-tight text-zinc-100">
+                      {labels.orderStatus}
+                    </span>
+                  </div>
+                </div>
+
+                <div
+                  className="rounded-xl border border-blox-border bg-blox-control/45 p-3"
+                  aria-disabled="true"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <span className="grid size-8 place-items-center rounded-lg bg-blox-info/85">
+                      <Headphones className="size-4 text-white" aria-hidden="true" />
+                    </span>
+                    <span className="text-sm font-medium leading-tight text-zinc-100">
+                      {labels.support247}
+                    </span>
+                  </div>
+                </div>
+
+                <div
+                  className="col-span-2 rounded-xl border border-blox-border bg-blox-control/45 p-3"
+                  aria-disabled="true"
+                >
+                  <div className="flex items-center justify-center gap-2.5 text-center">
+                    <span className="grid size-8 place-items-center rounded-lg bg-blox-primary/85">
+                      <User className="size-4 text-white" aria-hidden="true" />
+                    </span>
+                    <span className="text-sm font-medium leading-tight text-zinc-100">
+                      {labels.signIn}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </DrawerContent>
+    </Drawer>
   );
 }
 
@@ -199,7 +310,12 @@ export function SiteHeader({ locale, labels }: SiteHeaderProps) {
           <SignInButton label={labels.signIn} ariaLabel={labels.signIn} />
         </div>
 
-        <MobileMenuButton ariaLabel={labels.menu} />
+        <MobileMenuButton
+          ariaLabel={labels.menu}
+          locale={locale}
+          labels={labels}
+          localeOptions={localeOptions}
+        />
       </div>
     </header>
   );

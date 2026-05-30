@@ -144,7 +144,7 @@ export function GameSelector({ className }: GameSelectorProps) {
       <DropdownMenuContent
         align="start"
         sideOffset={8}
-        className="max-h-72 w-[--radix-dropdown-menu-trigger-width] overflow-y-auto rounded-lg border border-blox-border bg-blox-surface p-1.5"
+        className="blox-scrollbar max-h-72 w-[--radix-dropdown-menu-trigger-width] overflow-y-auto rounded-lg border border-blox-border bg-blox-surface p-1.5"
       >
         {GAMES.map((game) => (
           <DropdownMenuItem
